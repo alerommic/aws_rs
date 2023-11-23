@@ -44,7 +44,7 @@ echo "La instancia de la base de datos está disponible."
 DB_ENDPOINT=$(aws rds describe-db-instances --db-instance-identifier $DB_INSTANCE_IDENTIFIER --query "DBInstances[0].Endpoint.Address" --output text)
 
 # Ejecutar el script de creación de la base de datos
-mysql -h $DB_ENDPOINT -u $DB_MASTER_USERNAME -p$DB_MASTER_PASSWORD < todolist.sql
+mysql -h $DB_ENDPOINT -u $DB_MASTER_USERNAME -p $DB_MASTER_PASSWORD < todolist.sql
 
 # Mostrar información de la instancia de la base de datos
 echo "La instancia de la base de datos ha sido creada y el grupo de seguridad para MySQL Workbench ha sido configurado."
